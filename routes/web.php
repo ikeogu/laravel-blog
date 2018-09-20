@@ -13,16 +13,19 @@
 
 use App\Task;
 
-Route::get('/', function () {
-    $name = 'World';
+// Route::get('/', function () {
+//     $name = 'World';
+//
+//     return view('welcome', compact('name'));
+// });
+//
+// Route::get('/about', function() {
+//     return view('about');
+// });
+//
+//
+// Route::get('/tasks', 'TasksController@index');
+// Route::get('/tasks/{task}', 'TasksController@show');
 
-    return view('welcome', compact('name'));
-});
-
-Route::get('/about', function() {
-    return view('about');
-});
-
-
-Route::get('/tasks', 'TasksController@index');
-Route::get('/tasks/{task}', 'TasksController@show');
+Route::get('/', 'PostsController@index');
+Route::get('/posts/{post}', 'PostsController@show');
