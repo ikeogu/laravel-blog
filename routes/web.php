@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $name = 'World';
+
+    return view('welcome', compact('name'));
+});
+
+Route::get('/about', function() {
+    return view('about');
+});
+
+Route::get('/tasks', function() {
+    $tasks = array(
+        'Go to the store',
+        'Finish my screencast',
+        'Clean the house'
+    );
+
+    return view('tasks')->with(['tasks' => $tasks]);
 });
