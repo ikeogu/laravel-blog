@@ -17,11 +17,15 @@
 
         <div class="form-group">
             <label for="body">Body:</label>
-            <textarea name="body" id="body" rows="6" class="form-control"></textarea>
+            <textarea name="body" id="body" rows="6" class="form-control" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Create</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
     </form>
+
+    @include('layouts.errors')
 
 </div><!-- /.blog-main -->
 @endsection
