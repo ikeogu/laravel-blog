@@ -3,7 +3,9 @@
 @section('content')
     <div class="col-sm-8 blog-main">
 
-      <h2>Show a Post</h2>
+      <h2>{{ $post->title}}</h2>
+
+      {{ $post->body }}
 
     </div><!-- /.blog-main -->
 @endsection
