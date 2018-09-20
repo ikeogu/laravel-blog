@@ -22,11 +22,13 @@ Route::get('/about', function() {
 });
 
 Route::get('/tasks', function() {
-    $tasks = array(
-        'Go to the store',
-        'Finish my screencast',
-        'Clean the house'
-    );
+    $tasks = DB::table('tasks')->get();
 
-    return view('tasks')->with(['tasks' => $tasks]);
+    return view('tasks.index')->with(['tasks' => $tasks]);
+});
+
+Route::get('/tasks/{id}', function($id) {
+    $task = DB::table('tasks')->find($id);
+
+    return view('tasks.show')->with(['task' => $task]);
 });
